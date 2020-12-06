@@ -6,7 +6,9 @@ const chromedriver = require('chromedriver')
 const sites = require('../sites.json')
 const { checkSite } = require('../src/checkSite')
 
-chrome.setDefaultService(new chrome.ServiceBuilder(chromedriver.path).build())(async function example () {
+chrome.setDefaultService(new chrome.ServiceBuilder(chromedriver.path).build());
+
+(async function example () {
   const driver = new webdriver.Builder()
     .withCapabilities(webdriver.Capabilities.chrome())
     .build()
